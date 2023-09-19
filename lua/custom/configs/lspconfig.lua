@@ -5,6 +5,24 @@ local capabilities = base.capabilities
 local lspconfig = require("lspconfig")
 
 lspconfig.texlab.setup{}
+lspconfig.pyright.setup{
+  on_attach = on_attach,
+  settings = {
+    pyright = {
+      autoImportCompletion = true,
+      disableLanguageServices = false
+    },
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = 'openFilesOnly',
+        useLibraryCodeForTypes = true,
+        typeCheckingMode = 'strict'
+      }
+    }
+  }
+}
+
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
