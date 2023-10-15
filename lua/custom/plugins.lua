@@ -57,7 +57,7 @@ local plugins = {
         "clang-format",
         "codelldb",
         "pyright",
-        "node"
+        "zls"
       }
     }
   },
