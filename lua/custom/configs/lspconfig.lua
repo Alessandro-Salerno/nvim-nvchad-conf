@@ -6,6 +6,7 @@ local lspconfig = require("lspconfig")
 
 lspconfig.texlab.setup{}
 lspconfig.zls.setup{}
+lspconfig.gopls.setup{}
 lspconfig.pyright.setup{
   on_attach = on_attach,
   settings = {
